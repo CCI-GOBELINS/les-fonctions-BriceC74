@@ -1,3 +1,5 @@
+import kotlin.math.*
+
 fun evenOrOdd(type: String, amount: Int) {
     println(type)
 
@@ -28,9 +30,9 @@ fun fibonacci(amount: Int) {
 fibonacci(10)
 
 fun facto(number: Int = 10) {
-    println("Factoriel")
+    println("Facto")
     var step: Int = 1
-    for(i in 1..number) {
+    for (i in 1..number) {
         step = step * i
         println(step)
     }
@@ -39,3 +41,26 @@ fun facto(number: Int = 10) {
 facto()
 facto(5)
 
+fun isPrime(n: Int): Boolean {
+    if (n <= 1) return false
+    for (i in 2..sqrt(n.toDouble()).toInt()) {
+        if (n % i == 0) return false
+    }
+    return true
+}
+
+fun primeNumber(amount: Int) {
+    println("Prime Number")
+
+    var foundPrimes = 0
+    var i = 2
+    while (foundPrimes < amount) {
+        if (isPrime(i)) {
+            println(i)
+            foundPrimes++
+        }
+        i++
+    }
+}
+
+primeNumber(10)
