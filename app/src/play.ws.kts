@@ -26,3 +26,16 @@ fun fibonacci(amount: Int) {
     }
 }
 fibonacci(10)
+
+fun facto(number: Int = 10) {
+    println("Factoriel")
+    var step: Int = 1
+    for(i in 1..number) {
+        step = step * i
+        println(step)
+    }
+}
+
+facto()
+facto(5)
+
